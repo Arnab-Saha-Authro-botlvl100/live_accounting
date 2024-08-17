@@ -65,6 +65,7 @@ class AgentController extends Controller
                 $agent->district = $request->district;
                 $agent->country = $request->country;
                 $agent->description = $request->description;
+                $agent->opening_balance = $request->opening_balance;
                 
 
                 if($agent->save()){

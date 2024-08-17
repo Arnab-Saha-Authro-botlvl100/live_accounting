@@ -51,9 +51,17 @@
                             <input type="text" class="form-input mt-1 block w-full border p-2" id="company" name="company" placeholder="Enter a company">
                         </div>
                     </div>
-                    <div class="mb-4 w-[49%]">
-                        <label for="description" class="block text-sm font-semibold text-gray-600">Description:</label>
-                        <textarea class="form-input mt-1 block w-full border p-2" id="description" name="description" placeholder="Enter a description"></textarea>
+                   
+                    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-10">
+                        <div class="mb-4">
+                            <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
+                            <textarea id="description" name="description" class="mt-1 p-2 w-full border " placeholder="Enter a description" ></textarea>
+                        </div>
+            
+                        <div class="mb-4">
+                            <label for="opening_balance" class="block text-sm font-medium text-gray-700">Opening Balance:</label>
+                            <input type="number" id="opening_balance" name="opening_balance" class="mt-1 p-2 w-full border " placeholder="Enter Opening Balance">
+                        </div>
                     </div>
         
                     <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>

@@ -66,7 +66,7 @@
                 <td class="py-2" colspan="4"><b>Opening balance</b></td>
                 <td class="py-2"><b> </b></td>
                 <td class="py-2"><b> </b></td>
-                <td class="py-2" style="margin-top: 20px;"><b>{{  $opening_balance_debit - $opening_balance_credit }}</b></td></tr>
+                <td class="py-2" style="margin-top: 20px;"><b>{{  $opening_balance_debit - $opening_balance_credit + $opening_balance }}</b></td></tr>
             </thead>
             <tbody class="divide-y-2">
               

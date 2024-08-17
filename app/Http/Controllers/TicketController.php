@@ -140,6 +140,7 @@ class TicketController extends Controller
                 $agent_previous_amount = $agent_acc->amount;
                 $agent_new_amount = floatval($agent_previous_amount) + floatval($request['agent_price']);
                 $agent_acc->amount = $agent_new_amount;
+                // $agent_acc->opening_balance += floatval($request['agent_price']);
                 $agent_acc->save();
 
                 $ticket->agent_previous_amount = $agent_previous_amount;
@@ -149,6 +150,7 @@ class TicketController extends Controller
                 $supplier_prev_amount = $supplier->amount;
                 $supplier_new_amount = floatval($supplier_prev_amount) + floatval($request['supplier_price']);
                 $supplier->amount = $supplier_new_amount;
+                // $supplier->opening_balance += floatval($request['supplier_price']);
                 // $supplier_new_amount = $supplier_prev_amount + $supplier_amount;
                 // $agent->amount += $agent_amount;
                 // $agent->save();
