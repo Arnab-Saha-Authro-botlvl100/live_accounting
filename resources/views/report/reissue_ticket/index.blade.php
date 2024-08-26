@@ -63,7 +63,33 @@
         <button class="text-white bg-black font-bold text-md py-2 px-4" onclick='goBack()'>GO BACK</button>
     </div> 
     <div class="reportdiv mt-5" id="reportdiv">
-
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Serial </th>
+                    <th>Ticket No</th>
+                    <th>New Ticket No</th>
+                    <th>Date</th>
+                    <th>Sector</th>
+                    <th>Passenger Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($reissue_tickets as $index => $ticket)
+                    <tr>
+                      
+                        <td>{{$index + 1}}</td>
+                        <td>{{$ticket->ticket_code. '-'. $ticket->ticket_no}}</td>
+                        <td>{{$ticket->new_ticket_no}}</td>
+                        <td>{{$ticket->reissue_date}}</td>
+                        <td>{{$ticket->sector}}</td>
+                        <td>{{$ticket->passenger_name}}</td>
+                        
+                    </tr>
+                @endforeach
+               
+            </tbody>
+        </table>
     </div>
 
 
@@ -87,7 +113,7 @@
                     data: $(this).serialize(),
                     success: function (response) {
                         // Update the reportdiv with the response
-                        $('#reportdiv').html(response);
+                        $('#reportdiv').html(response.html);
                     },
                     error: function (error) {
                         console.log(error);

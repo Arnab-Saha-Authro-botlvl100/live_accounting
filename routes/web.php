@@ -188,23 +188,6 @@ Route::get('/order/view/{id}', [OrderController::class, 'view'])->name('order.vi
 Route::post('/order/update/{id}', [OrderController::class, 'update'])->name('order.update');
 Route::get('/order/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
 
-// Route::get('/ticket/view', function () {
-//     return app(TicketController::class)->index();
-// })->name('ticket.view');
-// Route::post('/addticket', [TicketController::class, 'store'])->name('addticket.store');
-// Route::get('/ticket/edit/{id}', [TicketController::class, 'edit'])->name('ticket.edit');
-// Route::post('/ticket/update/{id}', [TicketController::class, 'update'])->name('ticket.update');
-// Route::get('/ticket/delete/{id}', [TicketController::class, 'delete'])->name('ticket.delete');
-
-// // Ticket Refund
-// Route::get('/refund_ticket/view', function () {
-//     return app(TicketRefundController::class)->index();
-// })->name('refund_ticket.view');
-// Route::post('/add_refund_ticket', [TicketRefundController::class, 'store'])->name('refund.store');
-// Route::get('/refund_ticket/edit/{id}', [TicketRefundController::class, 'edit'])->name('refund_ticket.edit');
-// Route::post('/refund_ticket/update/{id}', [TicketRefundController::class, 'update'])->name('refund_ticket.update');
-// Route::get('/refund_ticket/delete/{id}', [TicketRefundController::class, 'delete'])->name('refund_ticket.delete');
-
 Route::get('/ticket/view', function () {
     return app(TicketController::class)->index();
 })->name('ticket.view');

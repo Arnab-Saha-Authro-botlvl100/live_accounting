@@ -166,9 +166,13 @@
                 <div class="flex  flex-col gap-y-2 w-[35%]">
                     <div class="flex justify-between bg-gray-100 text-md px-3">
                         <p>Current Amount</p>
-                        <p>
-                            <td>{{ number_format($receive_voucher->previous_amount, 0, '.', ',') }}</td>
-                        </p>
+                        <td>
+                            @if($receive_voucher->receive_from === 'agent')
+                                {{ number_format($opening_balance + $receive_voucher->amount, 0, '.', ',') }}
+                            @elseif($receive_voucher->receive_from === 'supplier')
+                                {{ number_format($opening_balance - $receive_voucher->amount, 0, '.', ',') }}
+                            @endif
+                        </td>
                     </div>
                     <div class="flex justify-between bg-gray-100 text-md px-3 font-bold">
                         <p>Received Amount</p>
@@ -176,7 +180,7 @@
                     </div>
                     <div class="flex justify-between bg-gray-100 text-md px-3">
                         <p>Balance Due</p>
-                        <p>{{ $receive_voucher->current_amount }}</p>
+                        <p>{{ $opening_balance}}</p>
                     </div>
                 </div>
             </div>
@@ -239,9 +243,13 @@
                 <div class="flex  flex-col gap-y-2 w-[35%]">
                     <div class="flex justify-between bg-gray-100 text-md px-3">
                         <p>Current Amount</p>
-                        <p>
-                            <td>{{ number_format($receive_voucher->previous_amount, 0, '.', ',') }}</td>
-                        </p>
+                        <td>
+                            @if($receive_voucher->receive_from === 'agent')
+                                {{ number_format($opening_balance + $receive_voucher->amount, 0, '.', ',') }}
+                            @elseif($receive_voucher->receive_from === 'supplier')
+                                {{ number_format($opening_balance - $receive_voucher->amount, 0, '.', ',') }}
+                            @endif
+                        </td>
                     </div>
                     <div class="flex justify-between bg-gray-100 text-md px-3 font-bold">
                         <p>Received Amount</p>
@@ -249,7 +257,7 @@
                     </div>
                     <div class="flex justify-between bg-gray-100 text-md px-3">
                         <p>Balance Due</p>
-                        <p>{{ $receive_voucher->current_amount}}</p>
+                        <p>{{ $opening_balance}}</p>
                     </div>
                 </div>
             </div>

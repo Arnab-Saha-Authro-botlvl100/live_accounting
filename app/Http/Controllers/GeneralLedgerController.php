@@ -80,6 +80,7 @@ class GeneralLedgerController extends Controller
     
                 $refund = $refund->where([
                     ['agent', $id],
+                    ['user', Auth::id()]
                 ]);
     
                 $paymenter = Payment::where([

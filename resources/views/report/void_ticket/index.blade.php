@@ -65,7 +65,33 @@
     </div> 
 
     <div class="reportdiv mt-5" id="reportdiv">
-
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Serial </th>
+                    <th>Ticket No</th>
+                    <th>Invoice No</th>
+                    <th>Date</th>
+                    <th>Sector</th>
+                    <th>Passenger Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($void_tickets as $index => $ticket)
+                    <tr>
+                      
+                        <td>{{$index + 1}}</td>
+                        <td>{{$ticket->ticket_code. '-'. $ticket->ticket_no}}</td>
+                        <td>{{$ticket->invoice}}</td>
+                        <td>{{$ticket->void_date}}</td>
+                        <td>{{$ticket->sector}}</td>
+                        <td>{{$ticket->passenger}}</td>
+                        
+                    </tr>
+                @endforeach
+               
+            </tbody>
+        </table>
     </div>
 
 
@@ -89,7 +115,7 @@
                     data: $(this).serialize(),
                     success: function (response) {
                         // Update the reportdiv with the response
-                        $('#reportdiv').html(response);
+                        $('#reportdiv').html(response.html);
                     },
                     error: function (error) {
                         console.log(error);
